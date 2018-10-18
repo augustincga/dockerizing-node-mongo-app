@@ -2,8 +2,8 @@ version: '3'
 
 # split services
 # restarts: always - in case it fails
-# ports mapping - 80 in local machine, 3000 in container
-# ports mapping - 27017 both in local machine and container
+# ports mapping - 3000 in local machine, 8080 in container
+# ports mapping - 27018 in local machine, 27017 in container
 # image - not building from a docker file, we`re pulling the image from docker hub 
 # links - link app service to mongo service
 
@@ -13,11 +13,11 @@ services:
     restart: always
     build: .
     ports:
-      - '80:3000'
+      - '3000:8080'
     links:
       - mongo
   mongo:
     container_name: mongo
     image: mongo
     ports:
-      - '27017:27017'
+      - '27018:27017'

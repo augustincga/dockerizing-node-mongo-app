@@ -13,7 +13,7 @@ RUN npm install
 # move everything is here into container
 COPY . .
 
-# map port 3000
-EXPOSE 3000
+# map port 8080
+EXPOSE 8080
 
 CMD ["npm", "start"]
